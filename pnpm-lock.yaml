@@ -43,6 +43,12 @@ devDependencies:
   '@antfu/eslint-config':
     specifier: ^2.27.1
     version: 2.27.3(@typescript-eslint/utils@8.15.0)(@vue/compiler-sfc@3.5.13)(eslint-plugin-format@0.1.2)(eslint@9.15.0)(typescript@5.7.2)(vitest@2.1.5)
+  '@headlessui/vue':
+    specifier: ^1.7.23
+    version: 1.7.23(vue@3.5.13)
+  '@heroicons/vue':
+    specifier: ^2.2.0
+    version: 2.2.0(vue@3.5.13)
   '@iconify-json/carbon':
     specifier: ^1.1.37
     version: 1.2.4
@@ -2037,6 +2043,24 @@ packages:
       levn: 0.4.1
     dev: true
 
+  /@headlessui/vue@1.7.23(vue@3.5.13):
+    resolution: {integrity: sha512-JzdCNqurrtuu0YW6QaDtR2PIYCKPUWq28csDyMvN4zmGccmE7lz40Is6hc3LA4HFeCI7sekZ/PQMTNmn9I/4Wg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@tanstack/vue-virtual': 3.10.9(vue@3.5.13)
+      vue: 3.5.13(typescript@5.7.2)
+    dev: true
+
+  /@heroicons/vue@2.2.0(vue@3.5.13):
+    resolution: {integrity: sha512-G3dbSxoeEKqbi/DFalhRxJU4mTXJn7GwZ7ae8NuEQzd1bqdd0jAbdaBZlHPcvPD2xI1iGzNVB4k20Un2AguYPw==}
+    peerDependencies:
+      vue: '>= 3'
+    dependencies:
+      vue: 3.5.13(typescript@5.7.2)
+    dev: true
+
   /@humanfs/core@0.19.1:
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -2694,6 +2718,19 @@ packages:
       json5: 2.2.3
       magic-string: 0.25.9
       string.prototype.matchall: 4.0.11
+    dev: true
+
+  /@tanstack/virtual-core@3.10.9:
+    resolution: {integrity: sha512-kBknKOKzmeR7lN+vSadaKWXaLS0SZZG+oqpQ/k80Q6g9REn6zRHS/ZYdrIzHnpHgy/eWs00SujveUN/GJT2qTw==}
+    dev: true
+
+  /@tanstack/vue-virtual@3.10.9(vue@3.5.13):
+    resolution: {integrity: sha512-KU2quiwJQpA0sdflpXw24bhW+x8PG+FlrSJK3Ilobim671HNn4ztLVWUCEz3Inei4dLYq+GW1MK9X6i6ZeirkQ==}
+    peerDependencies:
+      vue: ^2.7.0 || ^3.0.0
+    dependencies:
+      '@tanstack/virtual-core': 3.10.9
+      vue: 3.5.13(typescript@5.7.2)
     dev: true
 
   /@tybys/wasm-util@0.9.0:

@@ -4,7 +4,7 @@
   "packageManager": "pnpm@9.8.0",
   "scripts": {
     "build": "vite-ssg build",
-    "dev": "vite --port 3333 --open",
+    "dev": "vite --host",
     "lint": "eslint .",
     "preview": "vite preview",
     "preview-https": "serve dist",
@@ -30,6 +30,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.1",
+    "@headlessui/vue": "^1.7.23",
+    "@heroicons/vue": "^2.2.0",
     "@iconify-json/carbon": "^1.1.37",
     "@intlify/unplugin-vue-i18n": "^4.0.0",
     "@shikijs/markdown-it": "^1.14.1",
