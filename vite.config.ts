@@ -16,6 +16,8 @@ import Shiki from '@shikijs/markdown-it'
 import WebfontDownload from 'vite-plugin-webfont-dl'
 import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import ElementPlus from 'unplugin-element-plus/vite'
 
 export default defineConfig({
   resolve: {
@@ -61,6 +63,7 @@ export default defineConfig({
         'src/stores',
       ],
       vueTemplate: true,
+      resolvers: [ElementPlusResolver()],
     }),
 
     // https://github.com/antfu/unplugin-vue-components
@@ -70,7 +73,10 @@ export default defineConfig({
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
+      resolvers: [ElementPlusResolver()],
     }),
+
+    ElementPlus({ }),
 
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
@@ -101,31 +107,34 @@ export default defineConfig({
 
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
-      // registerType: 'autoUpdate',
-      // includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
-      // manifest: {
-      //   name: 'Vitesse',
-      //   short_name: 'Vitesse',
-      //   theme_color: '#ffffff',
-      //   icons: [
-      //     {
-      //       src: '/pwa-192x192.png',
-      //       sizes: '192x192',
-      //       type: 'image/png',
-      //     },
-      //     {
-      //       src: '/pwa-512x512.png',
-      //       sizes: '512x512',
-      //       type: 'image/png',
-      //     },
-      //     {
-      //       src: '/pwa-512x512.png',
-      //       sizes: '512x512',
-      //       type: 'image/png',
-      //       purpose: 'any maskable',
-      //     },
-      //   ],
-      // },
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
+      devOptions: {
+        enabled: true,
+      },
+      manifest: {
+        name: 'Vitesse',
+        short_name: 'Vitesse',
+        theme_color: '#ffffff',
+        icons: [
+          {
+            src: '/pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+          {
+            src: '/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
+      },
     }),
 
     // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
@@ -163,6 +172,6 @@ export default defineConfig({
 
   ssr: {
     // TODO: workaround until they support native ESM
-    noExternal: ['workbox-window', /vue-i18n/],
+    noExternal: ['workbox-window', /vue-i18n/, 'element-plus'],
   },
 })
